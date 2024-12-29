@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog | Login{% endblock %}
+
+{% block content %}
+
+    <div class="">   
+        <h1 class="text-center">Login</h1>
+
+        <form method="post" class="col-md-3 mx-auto">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-primary mx-auto" type="submit" value="login" >
+        </form> 
+    </div>
+{% endblock %}

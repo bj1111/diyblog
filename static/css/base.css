@@ -1,0 +1,57 @@
+.jumbotron {
+    padding: 10px;
+    margin: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    background-color:rgb(205, 208, 208);
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    color: rgb(44, 41, 41);
+    text-align: center;
+}
+
+
+
+.paper {
+    background-color: white;
+    padding: 20px;
+}
+
+small {
+    font-size: 12px;
+    color: rgb(102, 103, 104);
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.left-header {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.right-header {
+    text-align: right;
+    margin-left: 20px;
+}
+
+.center-header {
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

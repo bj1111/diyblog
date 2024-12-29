@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}User Info{% endblock %}
+
+{% block content %}
+
+    <h1>User Info</h1>
+
+    <p>Username: {{ user_info.username }}</p>
+    <p>Email: {{ user_info.email }}</p>
+    <p>First Name: {{ user_info.first_name }}</p>
+    <p>Last Name: {{ user_info.last_name }}</p>
+
+    <hr>
+    <a href="{% url 'accounts:reset_password' user_info.id %}" class="btn btn-primary">Reset Password</a>
+
+{% endblock %}

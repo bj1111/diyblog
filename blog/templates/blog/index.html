@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog | Home{% endblock %}
+
+{% block content %}
+
+     <!-- Header -->
+     <header class="blog-header">
+        <h1>Welcome to My Blog</h1>
+        <p class="lead">A platform to share your thoughts and connect with others.</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Key Features</h2>
+
+        <!-- Feature List -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4 blog-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Add Blogs</h5>
+                        <p class="card-text">Easily create and share your own blog posts with the world.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4 blog-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Update Blogs</h5>
+                        <p class="card-text">Edit your existing blogs to keep your content fresh and up-to-date.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4 blog-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Delete Blogs</h5>
+                        <p class="card-text">Remove blogs that are no longer relevant with ease.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4 blog-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Add Comments</h5>
+                        <p class="card-text">Engage with other users by leaving comments on their blogs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4 blog-card">
+                    <div class="card-body">
+                        <h5 class="card-title">User Profiles</h5>
+                        <p class="card-text">Manage your profile and explore the profiles of other bloggers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        <p class="mb-0">&copy; 2024 Blogging Website. All Rights Reserved.</p>
+    </footer>
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog | All {% endblock %}
+
+{% block content %}
+
+    <h1>Blogs</h1><hr>
+
+
+    {% for blog in page_obj.object_list %}
+
+        <h3><a href="{% url 'blog:detail' blog.id %}" class="text-decoration-none">{{ blog.title }}</a></h3>
+
+        <p>{{ blog.text|truncatewords:50 }}</p>
+        
+        <small><a href="{% url 'accounts:user_info' blog.author %}" class="text-decoration-none"><i>Published by {{ blog.author|title }} / {{ blog.published_date }}</i></a></small><br>
+
+        <hr>
+
+    {% empty %}
+
+        <p>No blog has been added yet.</p>
+
+    {% endfor %}
+    <!-- Pagination controls -->
+    <div class="pagination">
+        
+        <div class="pagination-links">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}" class="text-decoration-none">Previous</a>
+            {% endif %}
+            <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="text-decoration-none">Next</a>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

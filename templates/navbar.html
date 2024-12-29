@@ -1,0 +1,22 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'blog:index' %}">Django Blog</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        {% if request.user.is_authenticated %}
+            <a class="nav-link " href="{% url 'blog:list' %}">Blogs</a>
+            <a class="nav-link" href="{% url 'blog:create' %}">Create Blog</a>
+            <a class="nav-link" href="{% url 'blog:user_blog' %}">My Blogs</a>
+            <a class="nav-link" aria-disabled="true" href={% url 'accounts:user_info' request.user%}>Profile</a>
+            <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+        {% else %}
+            <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
+            <a class="nav-link" href="{% url 'accounts:register' %}">Sign Up</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ blog.title }}{% endblock %}
+
+
+{% block content %}
+
+    <div class="header-container">
+        <h2 class="center-header">{{ blog.title }}</h2>
+        {% if request.user == blog.author %}
+            <a href="{% url 'blog:update' blog.id %}"><img src="{% static 'img/edit.png' %}" alt="Edit"></a>
+            <a href="{% url 'blog:delete' blog.id %}"><img src="{% static 'img/delete.png' %}" alt="Delete"></a>
+        {% else %}   
+            <a href="{% url 'blog:index' %}"><img src="{% static 'img/back.png' %}" alt="Back"></a>
+        {% endif %}
+    </div><hr>
+
+    <p>{{ blog.text }}</p>
+
+    <small><i>Published by {{ blog.author|title }} / {{ blog.published_date }}</i></small><br>
+
+    <h1>Comments</h1>
+    <ul>
+        {% for comment in comments %}
+            <li>
+                <strong>{{ comment.author }}:</strong> {{ comment.text }}
+            </li>
+        {% empty %}
+            <li>No comments available.</li>
+        {% endfor %}
+    </ul>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="submit" class="btn btn-primary" style="height:50px">
+    </form>
+
+
+
+
+
+{% endblock %}
