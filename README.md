@@ -38,10 +38,6 @@ Activate the Virtual Environment: To activate the environment, use:
     ```
     source env/bin/activate
     ```
-Deactivate the Virtual Environment: When you're done working, you can deactivate the environment with:
-```
-deactivate
-```
 
 
 After installing and activating the `virtual environment`, run the following command to install all required packages.
@@ -57,7 +53,7 @@ Go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and click `Sign up` or `L
 
 The default superuser is:
 + username = _admin_
-+ password = _Brij##125_
++ password = _admin_
 
 Once you're logged in, go to `My Blogs` in the navigation bar, where you can manage your blog.
 
@@ -74,12 +70,19 @@ You can run the test by running the command given below.
 python manage.py test blog
 ```
 here is the image of the test cases been ran.
+
+
 ![testcases](https://github.com/user-attachments/assets/c0f8995a-6709-43e7-802a-9d8d196be242)
 
+you can access the admin pannel at
+[http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
 
+Here you can do all the CRUD operations of blog,user,comments.
 
-
-
+Deactivate the Virtual Environment: When you're done working, you can deactivate the environment with:
+```
+deactivate
+```
 
 # Goodbye!
 Thank you for taking the time to explore this simple Django blog project. I hope you find it helpful and informative as you learn more about Django and web development. If you have any questions, feel free to reach out. Happy coding, and goodbye!
